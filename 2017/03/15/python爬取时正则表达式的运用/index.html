@@ -31,25 +31,19 @@
 
 
 
-<link rel="canonical" href="https://wisdomw.github.io/2017/03/14/python爬取时正则表达式的运用/"/>
+<link rel="canonical" href="https://wisdomw.github.io/2017/03/15/python爬取时正则表达式的运用/"/>
 
 
-<meta name="description" content="正则表达式：1、通用的字符串表达框架2、简介表达一组字符串的表达式3、针对字符串表达“简洁”和“特征”思想的工具  
-正则表达式的语法：
-正则表达式的常用操作符操作符说明实例.表示任何单个字符[]字符集，给单个字符给出取值范围[abc]表示字母a,b,c；[a-z]表示字母a到z[^ ]非字符集，对单个字符给出排除范围[^abc]表示不是 a或者b或者c的单个字符 前一个字符0次或无数次扩展[ab">
+<meta name="description" content="正则表达式：1、通用的字符串表达框架2、简介表达一组字符串的表达式3、针对字符串表达“简洁”和“特征”思想的工具">
 <meta property="og:type" content="article">
 <meta property="og:title" content="python爬取时正则表达式的运用">
-<meta property="og:url" content="https://wisdomw.github.io/2017/03/14/python爬取时正则表达式的运用/index.html">
+<meta property="og:url" content="https://wisdomw.github.io/2017/03/15/python爬取时正则表达式的运用/index.html">
 <meta property="og:site_name" content="WisdomWang 的山谷">
-<meta property="og:description" content="正则表达式：1、通用的字符串表达框架2、简介表达一组字符串的表达式3、针对字符串表达“简洁”和“特征”思想的工具  
-正则表达式的语法：
-正则表达式的常用操作符操作符说明实例.表示任何单个字符[]字符集，给单个字符给出取值范围[abc]表示字母a,b,c；[a-z]表示字母a到z[^ ]非字符集，对单个字符给出排除范围[^abc]表示不是 a或者b或者c的单个字符 前一个字符0次或无数次扩展[ab">
-<meta property="og:updated_time" content="2017-03-15T00:52:34.000Z">
+<meta property="og:description" content="正则表达式：1、通用的字符串表达框架2、简介表达一组字符串的表达式3、针对字符串表达“简洁”和“特征”思想的工具">
+<meta property="og:updated_time" content="2017-03-15T02:37:52.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="python爬取时正则表达式的运用">
-<meta name="twitter:description" content="正则表达式：1、通用的字符串表达框架2、简介表达一组字符串的表达式3、针对字符串表达“简洁”和“特征”思想的工具  
-正则表达式的语法：
-正则表达式的常用操作符操作符说明实例.表示任何单个字符[]字符集，给单个字符给出取值范围[abc]表示字母a,b,c；[a-z]表示字母a到z[^ ]非字符集，对单个字符给出排除范围[^abc]表示不是 a或者b或者c的单个字符 前一个字符0次或无数次扩展[ab">
+<meta name="twitter:description" content="正则表达式：1、通用的字符串表达框架2、简介表达一组字符串的表达式3、针对字符串表达“简洁”和“特征”思想的工具">
 
 
 <link rel="stylesheet" type="text/css" href="/css/style.css?v=2.2.x" />
@@ -200,7 +194,7 @@
 
       <div class="post-meta">
         <span class="post-time">
-          Mar 14, 2017
+          Mar 15, 2017
         </span>
       </div>
     </header>
@@ -210,10 +204,81 @@
 
     <div class="post-content">
       
-        <p>正则表达式：<br>1、通用的字符串表达框架<br>2、简介表达一组字符串的表达式<br>3、针对字符串表达“简洁”和“特征”思想的工具  </p>
+        <p>正则表达式：<br>1、通用的字符串表达框架<br>2、简介表达一组字符串的表达式<br>3、针对字符串表达“简洁”和“特征”思想的工具<br><a id="more"></a></p>
 <p>正则表达式的语法：</p>
-<table><br><topical>正则表达式的常用操作符</topical><br><thead><br><tr><br><th>操作符</th><br><th>说明</th><br><th>实例</th><br></tr><br></thead><br><tbody><br><tr><br><td>.</td><br><td>表示任何单个字符</td><br><td></td><br></tr><br><tr><br><td>[]</td><br><td>字符集，给单个字符给出取值范围</td><br><td>[abc]表示字母a,b,c；[a-z]表示字母a到z</td><br></tr><br><tr><br><td>[^ ]</td><br><td>非字符集，对单个字符给出排除范围</td><br><td>[^abc]表示不是 a或者b或者c的单个字符</td><br></tr><br><tr><br><td><em> </em></td><br><td>前一个字符0次或无数次扩展</td><br><td>[abc ]表示ab、abc、abcc、abccc</td><br>        </tr><br>        <tr><br>            <td>+</td><br>            <td>前一个字符1次或无数次扩展</td><br>            <td>[abc+]表示abc、abcc、abccc</td><br>        </tr><br>        <tr><br>            <td>?</td><br>            <td>前一个字符0次或1次扩展</td><br>            <td>[abc?]表示ab、abc</td><br>        </tr><br>        <tr><br>            <td>|</td><br>            <td>左右任意一个</td><br>            <td>[abc|def]表示abc、def</td><br>        </tr><br>        <tr><br>            <td>{m}</td><br>            <td>扩展一个字符m次</td><br>            <td>ab{2}c表示abbc</td><br>        </tr><br>        <tr><br>            <td>{m,n}</td><br>            <td>扩展一个字符m~n次</td><br>            <td>ab{1,2}c表示abc、abbc</td><br>        </tr><br>         <tr><br>            <td>^</td><br>            <td>匹配字符串开头</td><br>            <td>^abc表示abc且在一个字符串的开头</td><br>        </tr><br>        <td>$</td><br>            <td>匹配字符串结尾</td><br>            <td>^abc表示abc且在一个字符串的结尾</td><br>        <tr><br>        <td>\d</td><br>        <td>数字，等价[0-9]</td><br>        </tr><br>        <tr><br>        <td>\w</td><br>        <td>单词字符，等价[A-Za-z0-9_]</td><br>                <td> </td><br>        </tr><br>    </tbody><br></table>
-
+<table>
+<thead>
+<tr>
+<th>操作符</th>
+<th>说明</th>
+<th>实例</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>.</td>
+<td>表示任何单个字符</td>
+<td>[abc]表示字母a、b、c；[a-z]表示字母a到z</td>
+</tr>
+<tr>
+<td>[^ ]</td>
+<td>非字符集，对单个字符给出排除范围</td>
+<td>[^abc]表示不是a、b、c的单个字符</td>
+</tr>
+<tr>
+<td>*</td>
+<td>前一个字符0次或者无数次扩展</td>
+<td>[abc*]表示ab、abc、abcc、abccc</td>
+</tr>
+<tr>
+<td>+</td>
+<td>表示前一个字符1次或者无数次扩展</td>
+<td>[abc+]表示abc、abcc、abccc</td>
+</tr>
+<tr>
+<td>？</td>
+<td>前一个字符0次或者1次扩展</td>
+<td>[abc?]表示ab、abc</td>
+</tr>
+<tr>
+<td>\</td>
+<td></td>
+<td>左右任意一个</td>
+<td>[abc\</td>
+<td>def]表示abc、def</td>
+</tr>
+<tr>
+<td>{m}</td>
+<td>扩展一个字符m次</td>
+<td>ab{2}c表示abbc</td>
+</tr>
+<tr>
+<td>{m,n}</td>
+<td>扩展一个字符m~n次</td>
+<td>ab{1,2}c表示abc、abbc</td>
+</tr>
+<tr>
+<td>^</td>
+<td>匹配字符串开头</td>
+<td>^abc表示abc且在一个字符串的开头</td>
+</tr>
+<tr>
+<td>$</td>
+<td>匹配字符串结尾</td>
+<td>$abc表示abc且在一个字符串的结尾</td>
+</tr>
+<tr>
+<td>\d</td>
+<td>数字，等价[0-9]</td>
+<td></td>
+</tr>
+<tr>
+<td>\w</td>
+<td>单词字符，等价[A-Za-z0-9_]</td>
+<td></td>
+</tr>
+</tbody>
+</table>
 <p>正则表达式的表示类型<br>1、raw string 类型<br>  例如：r’[1-8]\d{5}’<br>  不包含转义符的的字符类型<br>2、string类型<br>  例如：r’[1-8]\d{5}’<br>  包含转义符号   </p>
 <p>re库的主要功能函数：<br>re.search(pattern,string.flags=0):<br>在一个字符串中搜索匹配正则表达式的第一个位置，返回match对象<br>pattern——正则表达式的字符串<br>string——待匹配字符<br>flags——正则表达式的控制标记  </p>
 <p>re.match(pattern,string.flags=0):<br>从一个字符串的开始位置起匹配，返回match对象<br>pattern——正则表达式的字符串<br>string——待匹配字符<br>flags——正则表达式的控制标记   </p>
@@ -241,7 +306,7 @@
     </p>
     <p class="copyright-item">
       <span>Link: </span>
-      <a href="https://wisdomw.github.io/2017/03/14/python爬取时正则表达式的运用/">https://wisdomw.github.io/2017/03/14/python爬取时正则表达式的运用/</a>
+      <a href="https://wisdomw.github.io/2017/03/15/python爬取时正则表达式的运用/">https://wisdomw.github.io/2017/03/15/python爬取时正则表达式的运用/</a>
     </p>
 
     <p class="copyright-item lincese">
@@ -286,8 +351,8 @@
           
   <div class="comments" id="comments">
     
-      <div class="ds-thread" data-thread-key="2017/03/14/python爬取时正则表达式的运用/"
-           data-title="python爬取时正则表达式的运用" data-url="https://wisdomw.github.io/2017/03/14/python爬取时正则表达式的运用/">
+      <div class="ds-thread" data-thread-key="2017/03/15/python爬取时正则表达式的运用/"
+           data-title="python爬取时正则表达式的运用" data-url="https://wisdomw.github.io/2017/03/15/python爬取时正则表达式的运用/">
       </div>
     
   </div>
