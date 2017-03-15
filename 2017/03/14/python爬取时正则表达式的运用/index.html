@@ -35,20 +35,20 @@
 
 
 <meta name="description" content="正则表达式：1、通用的字符串表达框架2、简介表达一组字符串的表达式3、针对字符串表达“简洁”和“特征”思想的工具  
-正则表达式的语法：  
+正则表达式的语法：
     正则表达式的常用操作符                        操作符            说明            实例                                    .            表示任何单个字符">
 <meta property="og:type" content="article">
 <meta property="og:title" content="python爬取时正则表达式的运用">
 <meta property="og:url" content="https://wisdomw.github.io/2017/03/14/python爬取时正则表达式的运用/index.html">
 <meta property="og:site_name" content="WisdomWang 的山谷">
 <meta property="og:description" content="正则表达式：1、通用的字符串表达框架2、简介表达一组字符串的表达式3、针对字符串表达“简洁”和“特征”思想的工具  
-正则表达式的语法：  
+正则表达式的语法：
     正则表达式的常用操作符                        操作符            说明            实例                                    .            表示任何单个字符">
-<meta property="og:updated_time" content="2017-03-14T09:45:44.000Z">
+<meta property="og:updated_time" content="2017-03-15T00:49:42.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="python爬取时正则表达式的运用">
 <meta name="twitter:description" content="正则表达式：1、通用的字符串表达框架2、简介表达一组字符串的表达式3、针对字符串表达“简洁”和“特征”思想的工具  
-正则表达式的语法：  
+正则表达式的语法：
     正则表达式的常用操作符                        操作符            说明            实例                                    .            表示任何单个字符">
 
 
@@ -211,8 +211,8 @@
     <div class="post-content">
       
         <p>正则表达式：<br>1、通用的字符串表达框架<br>2、简介表达一组字符串的表达式<br>3、针对字符串表达“简洁”和“特征”思想的工具  </p>
-<p>正则表达式的语法：  </p>
-<table><br>    <topical>正则表达式的常用操作符</topical><br>    <thead><br>        <tr><br>            <th>操作符</th><br>            <th>说明</th><br>            <th>实例</th><br>        </tr><br>    </thead><br>    <tbody><br>        <tr><br>            <td>.</td><br>            <td>表示任何单个字符</td><br>            <td></td><br>        </tr><br>        <tr><br>            <td>[]</td><br>            <td>字符集，给单个字符给出取值范围</td><br>            <td>[abc]表示字母a,b,c；[a-z]表示字母a到z</td><br>        </tr><br>        <tr><br>            <td>[^ ]</td><br>            <td>非字符集，对单个字符给出排除范围</td><br>            <td>[^abc]表示不是 a或者b或者c的单个字符</td><br>        </tr><br>        <tr><br>            <td><em> </em></td><br>            <td>前一个字符0次或无数次扩展</td><br>            <td>[abc ]表示ab、abc、abcc、abccc</td><br>        </tr><br>        <tr><br>            <td>+</td><br>            <td>前一个字符1次或无数次扩展</td><br>            <td>[abc+]表示abc、abcc、abccc</td><br>        </tr><br>        <tr><br>            <td>?</td><br>            <td>前一个字符0次或1次扩展</td><br>            <td>[abc?]表示ab、abc</td><br>        </tr><br>        <tr><br>            <td>|</td><br>            <td>左右任意一个</td><br>            <td>[abc|def]表示abc、def</td><br>        </tr><br>        <tr><br>            <td>{m}</td><br>            <td>扩展一个字符m次</td><br>            <td>ab{2}c表示abbc</td><br>        </tr><br>        <tr><br>            <td>{m,n}</td><br>            <td>扩展一个字符m~n次</td><br>            <td>ab{1,2}c表示abc、abbc</td><br>        </tr><br>         <tr><br>            <td>^</td><br>            <td>匹配字符串开头</td><br>            <td>^abc表示abc且在一个字符串的开头</td><br>        </tr><br>        <td>¥</td><br>            <td>匹配字符串结尾</td><br>            <td>^abc表示abc且在一个字符串的结尾</td><br>            <td></td><br>        <br>        <td>\d</td><br>        <td>数字，等价[0-9]</td><br>        <br>        <br>        <td>\w</td><br>        <td>单词字符，等价[A-Za-z0-9_]</td><br>        <td></td><br>        <br>    </tbody><br></table>
+<p>正则表达式的语法：</p>
+<table><br>    <topical>正则表达式的常用操作符</topical><br>    <thead><br>        <tr><br>            <th>操作符</th><br>            <th>说明</th><br>            <th>实例</th><br>        </tr><br>    </thead><br>    <tbody><br>        <tr><br>            <td>.</td><br>            <td>表示任何单个字符</td><br>            <td></td><br>        </tr><br>        <tr><br>            <td>[]</td><br>            <td>字符集，给单个字符给出取值范围</td><br>            <td>[abc]表示字母a,b,c；[a-z]表示字母a到z</td><br>        </tr><br>        <tr><br>            <td>[^ ]</td><br>            <td>非字符集，对单个字符给出排除范围</td><br>            <td>[^abc]表示不是 a或者b或者c的单个字符</td><br>        </tr><br>        <tr><br>            <td><em> </em></td><br>            <td>前一个字符0次或无数次扩展</td><br>            <td>[abc ]表示ab、abc、abcc、abccc</td><br>        </tr><br>        <tr><br>            <td>+</td><br>            <td>前一个字符1次或无数次扩展</td><br>            <td>[abc+]表示abc、abcc、abccc</td><br>        </tr><br>        <tr><br>            <td>?</td><br>            <td>前一个字符0次或1次扩展</td><br>            <td>[abc?]表示ab、abc</td><br>        </tr><br>        <tr><br>            <td>|</td><br>            <td>左右任意一个</td><br>            <td>[abc|def]表示abc、def</td><br>        </tr><br>        <tr><br>            <td>{m}</td><br>            <td>扩展一个字符m次</td><br>            <td>ab{2}c表示abbc</td><br>        </tr><br>        <tr><br>            <td>{m,n}</td><br>            <td>扩展一个字符m~n次</td><br>            <td>ab{1,2}c表示abc、abbc</td><br>        </tr><br>         <tr><br>            <td>^</td><br>            <td>匹配字符串开头</td><br>            <td>^abc表示abc且在一个字符串的开头</td><br>        </tr><br>        <td>¥</td><br>            <td>匹配字符串结尾</td><br>            <td>^abc表示abc且在一个字符串的结尾</td><br>            <td></td><br>        <tr><br>        <td>\d</td><br>        <td>数字，等价[0-9]</td><br>        </tr><br>        <tr><br>        <td>\w</td><br>        <td>单词字符，等价[A-Za-z0-9_]</td><br>                <td> </td><br>        </tr><br>    </tbody><br></table>
 
 <p>正则表达式的表示类型<br>1、raw string 类型<br>  例如：r’[1-8]\d{5}’<br>  不包含转义符的的字符类型<br>2、string类型<br>  例如：r’[1-8]\d{5}’<br>  包含转义符号   </p>
 <p>re库的主要功能函数：<br>re.search(pattern,string.flags=0):<br>在一个字符串中搜索匹配正则表达式的第一个位置，返回match对象<br>pattern——正则表达式的字符串<br>string——待匹配字符<br>flags——正则表达式的控制标记  </p>
