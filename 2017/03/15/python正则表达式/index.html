@@ -40,7 +40,7 @@
 <meta property="og:url" content="https://wisdomw.github.io/2017/03/15/python正则表达式/index.html">
 <meta property="og:site_name" content="WisdomWang 的山谷">
 <meta property="og:description" content="正则表达式：1、通用的字符串表达框架2、简介表达一组字符串的表达式3、针对字符串表达“简洁”和“特征”思想的工具">
-<meta property="og:updated_time" content="2017-03-15T03:23:04.000Z">
+<meta property="og:updated_time" content="2017-03-15T03:28:13.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="python正则表达式">
 <meta name="twitter:description" content="正则表达式：1、通用的字符串表达框架2、简介表达一组字符串的表达式3、针对字符串表达“简洁”和“特征”思想的工具">
@@ -201,11 +201,18 @@
 
     
     
+  <div class="post-toc" id="post-toc">
+    <h2 class="post-toc-title">Contents</h2>
+    <div class="post-toc-content">
+      <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#正则表达式："><span class="toc-text">正则表达式：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#正则表达式的语法："><span class="toc-text">正则表达式的语法：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#re库的主要功能函数："><span class="toc-text">re库的主要功能函数：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#match对象："><span class="toc-text">match对象：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#match对象的方法："><span class="toc-text">match对象的方法：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#贪婪匹配和最小匹配"><span class="toc-text">贪婪匹配和最小匹配</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#最小匹配-操作符"><span class="toc-text">++==最小匹配==操作符++</span></a></li></ol></li></ol>
+    </div>
+  </div>
+
 
     <div class="post-content">
       
-        <p>正则表达式：<br>1、通用的字符串表达框架<br>2、简介表达一组字符串的表达式<br>3、针对字符串表达“简洁”和“特征”思想的工具<br><a id="more"></a><br>正则表达式的语法：</p>
-<table>
+        <h3 id="正则表达式："><a href="#正则表达式：" class="headerlink" title="正则表达式："></a>正则表达式：</h3><p>1、通用的字符串表达框架<br>2、简介表达一组字符串的表达式<br>3、针对字符串表达“简洁”和“特征”思想的工具<br><a id="more"></a></p>
+<h3 id="正则表达式的语法："><a href="#正则表达式的语法：" class="headerlink" title="正则表达式的语法："></a>正则表达式的语法：</h3><table>
 <thead>
 <tr>
 <th>操作符</th>
@@ -279,13 +286,45 @@
 </tbody>
 </table>
 <p>正则表达式的表示类型<br>1、raw string 类型<br>  例如：r’[1-8]\d{5}’<br>  不包含转义符的的字符类型<br>2、string类型<br>  例如：r’[1-8]\d{5}’<br>  包含转义符号   </p>
-<p>re库的主要功能函数：<br>re.search(pattern,string.flags=0):<br>在一个字符串中搜索匹配正则表达式的第一个位置，返回match对象<br>pattern——正则表达式的字符串<br>string——待匹配字符<br>flags——正则表达式的控制标记  </p>
+<h3 id="re库的主要功能函数："><a href="#re库的主要功能函数：" class="headerlink" title="re库的主要功能函数："></a>re库的主要功能函数：</h3><p>re.search(pattern,string.flags=0):<br>在一个字符串中搜索匹配正则表达式的第一个位置，返回match对象<br>pattern——正则表达式的字符串<br>string——待匹配字符<br>flags——正则表达式的控制标记  </p>
 <p>re.match(pattern,string.flags=0):<br>从一个字符串的开始位置起匹配，返回match对象<br>pattern——正则表达式的字符串<br>string——待匹配字符<br>flags——正则表达式的控制标记   </p>
 <p>re.findall(pattern,string.flags=0):<br>搜索字符串，以列表类型返回全部能匹配的子串<br>pattern——正则表达式的字符串<br>string——待匹配字符<br>flags——正则表达式的控制标记 </p>
 <p>re.split(pattern,string.maxsplit=0,flags=0):<br>将一个字符串按照正则表达式匹配结果进行分割，返回列表类型<br>pattern——正则表达式的字符串<br>string——待匹配字符<br>maxsplit:最大分割数，剩余部分作为最后一个元素输出<br>flags——正则表达式的控制标记   </p>
 <p>re.finditer(pattern,string.flags=0):<br>搜索字符串，返回一个匹配结果的迭代类型，每个迭代元素是match对象<br>pattern——正则表达式的字符串<br>string——待匹配字符<br>flags——正则表达式的控制标记   </p>
 <p>re.sub(pattern,repl,string.count=0,flags=0):<br>在一个字符串中替换所有匹配正则表达式的子串，返回替换后的字符串<br>pattern——正则表达式的字符串<br>repl——替换匹配字符串的字符串<br>string——待匹配字符<br>count——匹配的最大替换次数<br>flags——正则表达式的控制标记   </p>
-<p>match对象：<br>一次匹配的结果<br>属性：<br>.string——待匹配的文本<br>.re——匹配时使用的pattern对象，即正则表达式<br>.pos——正则表达式搜索文本的开始位置<br>.cndpos——正则表达式搜索文本的结束位置<br>match方法：<br>.group(0)——获得匹配后的字符串<br>.start()——<br>.cnd()<br>.span()  </p>
+<h3 id="match对象："><a href="#match对象：" class="headerlink" title="match对象："></a>match对象：</h3><p>一次匹配的结果<br>属性：<br>.string——待匹配的文本<br>.re——匹配时使用的pattern对象，即正则表达式<br>.pos——正则表达式搜索文本的开始位置<br>.cndpos——正则表达式搜索文本的结束位置  </p>
+<h3 id="match对象的方法："><a href="#match对象的方法：" class="headerlink" title="match对象的方法："></a>match对象的方法：</h3><p>.group(0)——获得匹配后的字符串<br>.start()——匹配字符串在原始字符串的开始位置<br>.end()——匹配字符串在原始字符串的结束位置<br>.span()——返回（.start(),.end()）  </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">import re</div><div class="line">    m = re.search(r&apos;[1-9]\d&#123;5&#125;&apos;,&apos;BUT100081 TUS100084&apos;)</div><div class="line">    print m.string  //结果就是原来的字符串</div><div class="line">    print m.re      //结果是正则表达式：re.compile(&apos;[1-9]\d&#123;5&#125;&apos;)</div><div class="line">    m.pos           //结果是0</div><div class="line">    m.endpos        //结果是19</div><div class="line">    m.group(0)      //结果是&apos;100081&apos;</div><div class="line">    m.start()       //结果是3</div><div class="line">    m.end()         //结果是9</div><div class="line">    m.span()        //结果是（3，9）</div></pre></td></tr></table></figure>
+<h3 id="贪婪匹配和最小匹配"><a href="#贪婪匹配和最小匹配" class="headerlink" title="贪婪匹配和最小匹配"></a>贪婪匹配和最小匹配</h3><p>实例</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">match = re.search(r&apos;PY.*N&apos;,&apos;PYANBNCNDN&apos;)</div><div class="line">print match.group(0)  //结果‘PYANBNCNDN’</div></pre></td></tr></table></figure>
+<p>原因：re库默认采用==贪婪模式==，返回最长的匹配<br>那么：如何进行最小匹配  </p>
+<h4 id="最小匹配-操作符"><a href="#最小匹配-操作符" class="headerlink" title="++==最小匹配==操作符++"></a>++==最小匹配==操作符++</h4><table>
+<thead>
+<tr>
+<th>操作符</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>*？</td>
+<td>前一个字符0次或者无数次扩展，最小匹配</td>
+</tr>
+<tr>
+<td>+？</td>
+<td>前一个字符1次或者无数次扩展，最小匹配  </td>
+</tr>
+<tr>
+<td>？？</td>
+<td>前一个字符0次或者1次扩展，最小匹配</td>
+</tr>
+<tr>
+<td>{m,n}?</td>
+<td>前一个字符扩展m到n次，最小匹配</td>
+</tr>
+</tbody>
+</table>
+<p>规律：1个正则表达式操作符组合 加上一个 ？</p>
 
       
     </div>
