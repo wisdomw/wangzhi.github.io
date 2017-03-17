@@ -182,7 +182,7 @@
     <header class="post-header">
       <h1 class="post-title">
         
-          <a class="post-link" href="/2017/03/17/python数据类型/"></a>
+          <a class="post-link" href="/2017/03/17/python数据类型/">python数据类型</a>
         
       </h1>
 
@@ -200,16 +200,120 @@
       
         
         
-          
-        
 
         
-          <hr>
-<p> title: python数据类型  </p>
-<h2 id="tags-python"><a href="#tags-python" class="headerlink" title=" tags: python"></a> tags: python</h2><h4 id="类型的概念"><a href="#类型的概念" class="headerlink" title="类型的概念"></a>类型的概念</h4><p>对于10001这个数据，如果不定义数据，将会出现歧义，所以必须规定数据类型<br>
-          <div class="read-more">
-            <a href="/2017/03/17/python数据类型/" class="read-more-link">Read more..</a>
-          </div>
+          <a id="more"></a>  
+<h4 id="类型的概念"><a href="#类型的概念" class="headerlink" title="类型的概念"></a>类型的概念</h4><p>对于10001这个数据，如果不定义数据，将会出现歧义，所以必须规定数据类型  </p>
+<p>python主要6种数据类型：<br>1、数字类型<br>2、字符串类型<br>3、元组类型<br>4、列表类型<br>5、文件类型<br>6、字典类型  </p>
+<h4 id="数字类型"><a href="#数字类型" class="headerlink" title="数字类型"></a>数字类型</h4><p>python语言包括三种数字类型：<br>1、整数类型<br>2、浮点数类型<br>3、复数类型<br>三种类型存在一种逐渐“扩展”的关系：<br>1、整数-&gt;浮点数-&gt;复数 （整数是浮点数的特例，浮点数是复数的特例）<br>2、不同的数字类型之间可以进行混合运算，结果为最宽类型，如  </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">123+4.0=127.0   #整数+浮点数=浮点数</div></pre></td></tr></table></figure>
+<p>不同的数据类型之间可以相互转换，如：  </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div></pre></td><td class="code"><pre><div class="line">int(4.5)=4  </div><div class="line">float(4)=4.0  </div><div class="line">complex(4)=4+0J  </div><div class="line">#但是不支持复数转化为浮点数</div><div class="line">```  </div><div class="line">数字类型的运算  </div><div class="line"></div><div class="line">运算符和运算函数 | 操作含义</div><div class="line">---|---</div><div class="line">x+y | x、y之和</div><div class="line">x-y | x、y之差</div><div class="line">x*y | x、y之积</div><div class="line">x/y | x、y之商</div><div class="line">x//y | 不大于 x与y之商的最大整数</div><div class="line">x%y | x、y之商的余数</div><div class="line">+x | x</div><div class="line">-x | x的负值</div><div class="line">x**y | x的y次幂</div><div class="line">abs(x) | x的绝对值</div><div class="line">divmod(x,y) | (x//y,x%y)即（商，余数）</div><div class="line">pow(x,y) | x的y次幂  </div><div class="line">  </div><div class="line">#### 字符串类型  </div><div class="line">1、字符串是用双引号、单引号括起来的一个或者多个字符  </div><div class="line">2、字符串可以保存在变量中，也可以单独存在  </div><div class="line">3、可以用type（）函数测试一个字符串的类型，为str  </div><div class="line">4、如果字符串有引号，那么就要用到转义符——\</div></pre></td></tr></table></figure>
+<p>print (“\”大家好\””) #输出——“大家好”<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">5、字符串是一个字符序列，字符串的编号从0开始，叫做索引</div></pre></td></tr></table></figure></p>
+<p>a = “hello woeld”<br>print (a[1])    #结果是‘e’<br>print (a[-1])   #结果是‘d’<br>print (a[1:2])  #结果是‘el’<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">6、字符串可以通过+和*进行拼接</div></pre></td></tr></table></figure></p>
+<p>‘a’+’b’=’ab’<br>3*’a’=’aaa’<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">```</div><div class="line">n = int(input(&apos;请输入一个数字&apos;))</div><div class="line">weekInfo = &apos;星期一星期二星期三星期四星期五星期六星期天&apos;</div><div class="line">print(weekInfo[(n-1)*3:n*3])</div></pre></td></tr></table></figure></p>
+<p>7、len()函数能够返回一个字符串的长度<br>8、常见的字符串操作方法  </p>
+<table>
+<thead>
+<tr>
+<th>操作</th>
+<th>含义</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>+</td>
+<td>连接</td>
+</tr>
+<tr>
+<td>*</td>
+<td>函数  </td>
+</tr>
+<tr>
+<td><string>[]</string></td>
+<td>索引</td>
+</tr>
+<tr>
+<td>len(<string>)</string></td>
+<td>长度  </td>
+</tr>
+<tr>
+<td><string>.upper</string></td>
+<td>大写</td>
+</tr>
+<tr>
+<td><string>.lower</string></td>
+<td>小写 </td>
+</tr>
+<tr>
+<td><string>.strip</string></td>
+<td>去除两边空格／去除指定字符</td>
+</tr>
+<tr>
+<td><string>.split</string></td>
+<td>按照指定字符分割字符串</td>
+</tr>
+<tr>
+<td><string>.join</string></td>
+<td>链接两个字符串</td>
+</tr>
+<tr>
+<td><string>.replace</string></td>
+<td>替换</td>
+</tr>
+<tr>
+<td>for <var> in <string></string></var></td>
+<td>迭代</td>
+</tr>
+</tbody>
+</table>
+<h4 id="元组"><a href="#元组" class="headerlink" title="元组"></a>元组</h4><p>1、元组是包含多个元素的类型，元组之间用逗号分割  </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">例如： a = 123，“hello world”</div><div class="line">```  </div><div class="line">2、元组可以是空的  a2 = ()  </div><div class="line">3、元组也可以只包含一个元素  a3 = 123.1  </div><div class="line">4、元组外侧可以使用括号，也可以不适用  </div><div class="line">5、元组中的元素可以是不同类型，可以元组包含元组，但是被包含的元组必须用（）</div></pre></td></tr></table></figure>
+<p>a4 = 122,“hello world”，（123，”中国”）<br>```<br>6、元组和字符串一样 可以通过索引来访问各个元素<br>7、元组定义后不能更改、删除<br>优点：不能更改——安全<br>缺点：不灵活  </p>
+<h4 id="列表"><a href="#列表" class="headerlink" title="列表"></a>列表</h4><p>1、列表（list）是有序的元素集合  </p>
+<table>
+<thead>
+<tr>
+<th>方法</th>
+<th>含义</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><list>.append(x)</list></td>
+<td>将元素x添加到列表的最后</td>
+</tr>
+<tr>
+<td><list>.sort()</list></td>
+<td>将列表元素排序</td>
+</tr>
+<tr>
+<td><list>.reverse()</list></td>
+<td>将元素反转</td>
+</tr>
+<tr>
+<td><list>.index(x)</list></td>
+<td>返回第一次出现元素x的索引值</td>
+</tr>
+<tr>
+<td><list>.insert(i,x)</list></td>
+<td>在位置i处插入新元素x</td>
+</tr>
+<tr>
+<td><list>.count(x)</list></td>
+<td>返回x元素在列表中的数量</td>
+</tr>
+<tr>
+<td><list>.remove()</list></td>
+<td>删除列表中第一次出现的x元素</td>
+</tr>
+<tr>
+<td><list>.pop(i)</list></td>
+<td>删除列表中位置i的元素</td>
+</tr>
+</tbody>
+</table>
+
         
       
     </div>
